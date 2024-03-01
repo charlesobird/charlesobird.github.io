@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Portfolio</title>
+
+    <script defer src="assets/js/mobileNav.js"></script>
+</head>
+
+<body>
+    <!--
+        Mobile Header
+    -->
+    <header>
+        <section>
+            <a href="index.html">
+                <img src="./assets/img/Logo/Logo_just_bike.png"
+                    style="border-radius: 300px; height: 102px; width: 99px;" alt="A white bike">
+            </a>
+            <a id="mobileNavOpen"><i class="fas fa-bars"></i></a>
+        </section>
+
+    </header>
+    <!--
+        Navigation Bar
+    -->
+    <nav>
+        <section>
+            <a href="/" class="active">Home</a>
+            <div class="dropdown">
+                <a>Bikes <i class="fas fa-caret-down"></i></a>
+                <div class="dropdownItems">
+                    <a href="./pages/bikes/hardtail.html">Hardtail</a>
+                    <a href="./pages/bikes/fullSuspension.html">Full Suspension</a>
+                    <a href="./pages/bikes/gravel.html">Gravel</a>
+                </div>
+            </div>
+            <a id="mobileNavClose"><i class="fa-solid fa-xmark"></i></a>
+        </section>
+    </nav>
+    <!--
+        Main Content
+    -->
+    <p><i>Content goes here</i></p>
+
+</body>
+
+</html>
