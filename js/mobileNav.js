@@ -22,26 +22,42 @@ const navItems = document.querySelector("nav > .navItems");
 const navToggle = nav.querySelector("#mobileNavToggleContainer #mobileNavToggle");
 const navToggleIcon = navToggle.querySelector("i");
 
+let timeout = {
+    id: 0,
+    clear: () => {
+        clearTimeout(this.id)
+    },
+    set: (func, delay) => {
+        this.id = setTimeout(func, delay);
+    }
+}
+
+let removeChildTimeout = null;
+let addOpenNavClassTimeout = null;
 navToggle.addEventListener("click", (e) => {
+    if (timeout.id != 0) {
+        timeout.clear()
+    }
     if (navToggleIcon.classList.contains(MARK_CLASS)) {
+        document.querySelector("#mobileNavItems").remove("openNav");
         navToggleIcon.classList.remove(MARK_CLASS);
         navToggleIcon.classList.add(BARS_CLASS);
-        document.querySelector("#mobileNavItems").remove("openNav");
-        setTimeout(() => {
-            document.body.removeChild(document.querySelector("#mobileNavItems"));
-        }, 650)
+        if (document.querySelector("#mobileNavItems")) {
+            timeout.set(() => {
+                document.body.removeChild(document.querySelector("#mobileNavItems"));
+            }, 650)
+        }
     } else {
         navToggleIcon.classList.add(MARK_CLASS);
         navToggleIcon.classList.remove(BARS_CLASS);
-        // navItems.classList.add("openNav");
         const mobileNavItems = navItems.cloneNode(true);
+        document.body.appendChild(mobileNavItems);
         mobileNavItems.id = "mobileNavItems";
         mobileNavItems.classList.add("column");
         mobileNavItems.classList.remove("row");
         mobileNavItems.classList.add("overflow-hidden");
-        document.body.appendChild(mobileNavItems);
-        setTimeout(() => {
+        timeout.set(() => {
             mobileNavItems.classList.add("openNav");
-        }, 100 );
+        }, 250)
     }
 })
