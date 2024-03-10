@@ -26,18 +26,22 @@ navToggle.addEventListener("click", (e) => {
     if (navToggleIcon.classList.contains(MARK_CLASS)) {
         navToggleIcon.classList.remove(MARK_CLASS);
         navToggleIcon.classList.add(BARS_CLASS);
-        // navItems.classList.remove("openNav");
-        document.body.removeChild(document.querySelector("#mobileNavItems"));
+        document.querySelector("#mobileNavItems").remove("openNav");
+        setTimeout(() => {
+            document.body.removeChild(document.querySelector("#mobileNavItems"));
+        }, 650)
     } else {
         navToggleIcon.classList.add(MARK_CLASS);
         navToggleIcon.classList.remove(BARS_CLASS);
         // navItems.classList.add("openNav");
         const mobileNavItems = navItems.cloneNode(true);
         mobileNavItems.id = "mobileNavItems";
-        mobileNavItems.classList.add("openNav");
         mobileNavItems.classList.add("column");
         mobileNavItems.classList.remove("row");
         mobileNavItems.classList.add("overflow-hidden");
         document.body.appendChild(mobileNavItems);
+        setTimeout(() => {
+            mobileNavItems.classList.add("openNav");
+        }, 100 );
     }
 })

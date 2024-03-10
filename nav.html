@@ -77,17 +77,19 @@
                 display: none;
             }
 
-            .navItems {
-                transition: height ease 0.55s;
+            #mobileNavItems {
+                transition: height ease 250ms;
                 height: 0;
                 flex-grow: 0;
                 flex-basis: content;
                 background-color: var(--_navbar-background);
             }
 
-            .navItems.openNav,
             #mobileNavItems.openNav {
-                height: 100vh !important;
+                height: calc(100vh - 4.5rem);
+            }
+            #mobileNavItems.openNav > a {
+                font-size: 1.7rem;
             }
 
             #mobileNavToggleContainer #mobileNavToggle {
