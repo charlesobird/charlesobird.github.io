@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Nav Bar</title>
+
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/layout.css">
+
+    <script defer src="js/mobileNav.js"></script>
+    <style>
+        :root {
+            --_navbar-background: var(--darker-blue);
+            --_navbar-main-colour: var(--dark-grey);
+            --_side-column-width: calc(100vw / 6);
+        }
+
+        nav {
+            background-color: var(--_navbar-background);
+            height: 4rem;
+            padding: 0.2rem;
+            color: var(--white);
+
+        }
+
+        nav>div {
+            width: calc(100vw / 3);
+            flex-grow: 1;
+            /* flex-basis: auto; */
+        }
+
+        #nameAndLogo {
+            width: calc(100vw / 8);
+            gap: 0.3em;
+            margin-left: 0.3rem;
+        }
+
+        #nameAndLogo>i.fa-code {
+            font-size: 1.5rem;
+            border-radius: 100%;
+            /* -webkit-box-shadow: 0px 0px 44px -3px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 44px -3px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 44px -3px rgba(0, 0, 0, 0.75); */
+            border: 2px groove white;
+            padding: 10px;
+        }
+
+        .navItems {
+            gap: 2rem;
+            font-size: 1.3em;
+        }
+
+        .navItems a {
+            text-decoration: none !important;
+            color: var(--white);
+            font-family: 'Nexa Heavy';
+        }
+
+        #mobileNavToggleContainer {
+            width: var(--_side-column-width);
+            visibility: hidden;
+        }
+
+        /* anything below this comment is for the mobile media query NOT for desktop use */
+        @media screen and (max-width: 705px) {
+            #mobileNavToggleContainer {
+                visibility: visible;
+            }
+            
+            nav {
+                border-bottom: solid 2px var(--white);
+            }
+
+            .navItems:not(#mobileNavItems) {
+                display: none;
+            }
+
+            .navItems {
+                transition: height ease 0.55s;
+                height: 0;
+                flex-grow: 0;
+                flex-basis: content;
+                background-color: var(--_navbar-background);
+            }
+
+            .navItems.openNav,
+            #mobileNavItems.openNav {
+                height: 100vh !important;
+            }
+
+            #mobileNavToggleContainer #mobileNavToggle {
+                background: none;
+                box-shadow: none;
+                border-radius: 5px;
+                margin-inline: auto 1rem;
+                border: none;
+                font-size: 3em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="flex row flex1 h-centre">
+        <div id="nameAndLogo" class="flex row h-centre">
+            <i class="fa-solid fa-code"></i>
+            <h3>Charles Bird</h3>
+        </div>
+        <div class="navItems flex row v-h-centre">
+            <a href="/" class="active">Home</a> <!-- Includes biography, skills, CV-->
+            <!--             <div class="dropdown">
+                    <a>Projects <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdownItems">
+                        <a href="">Python</a>
+                        <a href="">NodeJS</a>
+                        <a href="">Websites</a>
+                    </div>
+                </div> -->
+            <a href="./projects">Projects</a>
+            <a href="./projects">Contacts</a>
+        </div>
+        <div id="mobileNavToggleContainer" class="flex row">
+            <a id="mobileNavToggle"><i class="fas fa-bars"></i></a>
+        </div>
+    </nav>
+</body>
+
+</html>

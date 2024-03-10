@@ -1,0 +1,100 @@
+:root {
+    --dark-grey: #403F3F;
+    --light-grey: #ADADAD;
+    --lighter-blue: #6FA0B2;
+    --darker-blue: #668996;
+    --darker-blue-opacity-07: rgba(102, 137, 150, 0.7);
+    --white: #fff;
+}
+
+@font-face {
+    font-family: "Nexa Heavy";
+    src: url("../assets/webfonts/Nexa-Heavy.ttf");
+}
+
+@font-face {
+    font-family: "Nexa Extra Light";
+    src: url("../assets/webfonts/Nexa-ExtraLight.ttf");
+}
+
+/* * {
+    padding: 0;
+    margin: 0;
+} */
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--white);
+    color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Nexa Heavy";
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex1 {
+    flex: auto;
+}
+
+.v-h-centre {
+    justify-content: center;
+    align-items: center;
+}
+
+.v-centre {
+    justify-content: center;
+}
+
+.h-centre {
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
+footer {
+    width: 100vw;
+    position: fixed;
+    top: 90vh;
+    border-top: 2px groove var(--dark-grey);
+    text-align: center;
+    height: 15px;
+}
+
+footer #links {
+    height: 100%;
+    width: 100%;
+}
+
+footer #links>a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Nexa Heavy';
+    transition: all 200ms;
+    width: 10rem;
+}
+
+footer #links>a:hover {
+    color: #668996;
+}

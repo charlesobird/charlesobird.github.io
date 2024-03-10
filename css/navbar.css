@@ -1,0 +1,223 @@
+:root {
+    --navbar-background: var(--darker-blue);
+    --navbar-main-colour: var(--dark-grey);
+}
+
+header {
+    display: none;
+    border-bottom: none;
+}
+
+nav {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    background-color: var(--navbar-background);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    height: 3rem;
+    padding: 0.2rem;
+    
+}
+
+nav > section > * {
+    color: rgb(247, 255, 250);
+}
+
+nav section {
+    display: flex;
+    gap: 0.3em;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    flex: 1;
+}
+
+nav section>a>img {
+    height: auto;
+    border-radius: 0.35rem;
+    width: 10rem;
+}
+
+nav section a:not(#navImg),
+nav section div.dropdown,
+nav section div.dropdown a {
+    padding: 0.625em 0.625em;
+    border-radius: 0.5em;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.2em;
+    transition: all 250ms, border 100ms;
+    font-size: 1rem;
+    font-weight: bold;
+    /* border: groove 0px var(--lighter-blue) */
+}
+
+nav section #mobileNavClose {
+    display: none;
+}
+
+nav section .dropdown .dropdownItems {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    background-color: var(--navbar-background);
+    display: none;
+    position: absolute;
+    margin-inline: auto;
+    height: auto;
+    width: 15rem;
+    margin-top: 1.5em;
+}
+
+.active,
+nav section>a:not(#navImg):hover,
+nav section div.dropdown a:hover,
+nav section div.dropdown div.dropdownItems a:hover,
+nav section div.dropdown:has(:hover)>a,
+header section a#mobileNavOpen:hover
+ {
+    background: var(--navbar-background) !important;
+    /* box-shadow: 0 0 0.6em rgba(25, 23, 23, 0.381) !important; 
+    border: solid 2.5px var(--white); */
+    color: var(--navbar-main-colour);
+}
+
+header section a#mobileNavOpen:hover {
+    #mobileNavOpen:before {
+        position: absolute;
+        top: 2px;
+        color: var(--white);
+    }
+}
+
+nav section .dropdown .dropdownItems {
+    margin-top: 0.5em;
+}
+
+nav section .dropdown a {
+    position: relative;
+}
+
+nav section .dropdown a i {
+    transition: transform 250ms;
+}
+
+nav section .dropdown a:hover {
+    cursor: pointer;
+}
+
+nav section .dropdown:has(:hover) .dropdownItems {
+    display: flex;
+    flex-direction: column;
+}
+
+nav section a:not(#mobileNavClose) {
+    font-size: 1.2rem !important;
+}
+
+@media screen and (max-width: 79rem) {
+    nav {
+        display: flex;
+        height: 0;
+        flex-direction: column;
+        flex-wrap: wrap;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        transition: height ease 0.55s;
+        padding: 0;
+        z-index: 2;
+        position: relative;
+    }
+
+    nav section {
+        overflow-x: hidden;
+        overflow-y: hidden;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    nav section img {
+        display: none;
+    }
+
+    nav section div.dropdown {
+        position: relative;
+    }
+
+    nav section div.dropdown div.dropdownItems {
+        position: relative;
+        width: 100%;
+        margin: 0.6em 0;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    nav section a#mobileNavClose {
+        display: block;
+        font-size: 2em;
+        padding: 0.2em 0.35em;
+    }
+
+    nav section a#mobileNavClose:hover {
+        cursor: pointer;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        background-color: var(--navbar-background);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        width: 100vw !important;
+        margin: auto;
+    }
+
+    header section {
+        margin: 0.5em;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    header section a#mobileNavOpen {
+        background: none;
+        box-shadow: none;
+        border-radius: 5px;
+        margin-inline: auto 1rem;
+        border: none;
+    }
+
+    header section a:hover {
+        cursor: pointer;
+
+    }
+
+    header section a i {
+        margin: 5px;
+        font-size: 3rem;
+        color: white;
+    }
+
+/*     header {
+        border-bottom: 2px solid var(--lighter-blue);
+    } */
+
+    nav.openNav {
+        height: 100vh;
+        padding: 0.2rem;
+    }
+
+  
+
+    nav section a:not(#mobileNavClose) {
+        font-size: 1.4rem !important;
+    }
+}
