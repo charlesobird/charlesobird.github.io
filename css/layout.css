@@ -1,10 +1,12 @@
 :root {
     --dark-grey: #403F3F;
+    --less-dark-grey: #535353;
     --light-grey: #ADADAD;
     --lighter-blue: #6FA0B2;
     --darker-blue: #668996;
     --darker-blue-opacity-07: rgba(102, 137, 150, 0.7);
     --white: #fff;
+    --black: #000;
 }
 
 @font-face {
@@ -27,7 +29,7 @@ body {
     overflow-y: auto;
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--white);
-    color: var(--white);
+    color: var(--black);
 }
 
 h1,
@@ -71,6 +73,11 @@ h6 {
 
 .overflow-hidden {
     overflow: hidden !important;
+   
+}
+
+a:hover {
+    cursor: pointer;
 }
 
 footer {

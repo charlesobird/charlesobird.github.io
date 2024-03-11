@@ -1,223 +1,108 @@
 :root {
-    --navbar-background: var(--darker-blue);
-    --navbar-main-colour: var(--dark-grey);
-}
-
-header {
-    display: none;
-    border-bottom: none;
+    --_navbar-background: var(--lighter-blue);
+    --_navbar-main-colour: var(--dark-grey);
+    --_side-column-width: calc(100vw / 6);
+    --_nav-item-colour: var(--black);
 }
 
 nav {
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    background-color: var(--navbar-background);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    height: 3rem;
+    background-color: var(--_navbar-background);
+    height: 4rem;
     padding: 0.2rem;
-    
+    color: var(--_navbar-item-colour);
+
 }
 
-nav > section > * {
-    color: rgb(247, 255, 250);
+nav>div {
+    width: calc(100vw / 3);
+    flex-grow: 1;
+    flex-basis: auto;
 }
 
-nav section {
-    display: flex;
+#nameAndLogo {
+    width: calc(100vw / 8);
     gap: 0.3em;
-    width: 100%;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    flex: 1;
+    margin-left: 0.3rem;
 }
 
-nav section>a>img {
-    height: auto;
-    border-radius: 0.35rem;
-    width: 10rem;
+#nameAndLogo>#devLogo.fa-code {
+    font-size: 1.5rem;
+    border-radius: 100%;
+    border: 2px groove white;
+    padding: 10px;
 }
 
-nav section a:not(#navImg),
-nav section div.dropdown,
-nav section div.dropdown a {
-    padding: 0.625em 0.625em;
-    border-radius: 0.5em;
-    text-decoration: none;
-    text-align: center;
-    margin: 0.2em;
-    transition: all 250ms, border 100ms;
-    font-size: 1rem;
-    font-weight: bold;
-    /* border: groove 0px var(--lighter-blue) */
+.navItems {
+    gap: 2rem;
+    font-size: 1.3em;
+    width: calc(100vw / 3);
+    flex-grow: 1;
 }
 
-nav section #mobileNavClose {
-    display: none;
+
+.navItems a,
+#mobileNavToggle {
+    text-decoration: none !important;
+    color: var(--_nav-item-colour);
+    font-family: 'Nexa Heavy';
+    transition: all 350ms;
 }
 
-nav section .dropdown .dropdownItems {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    background-color: var(--navbar-background);
-    display: none;
-    position: absolute;
-    margin-inline: auto;
-    height: auto;
-    width: 15rem;
-    margin-top: 1.5em;
+a.active,
+.navItems a:hover,
+#mobileNavToggle:hover {
+    color: var(--_nav-item-colour) !important;
+    border-bottom: 3px solid var(--white);
+    transform: scale(1.05);
 }
 
-.active,
-nav section>a:not(#navImg):hover,
-nav section div.dropdown a:hover,
-nav section div.dropdown div.dropdownItems a:hover,
-nav section div.dropdown:has(:hover)>a,
-header section a#mobileNavOpen:hover
- {
-    background: var(--navbar-background) !important;
-    /* box-shadow: 0 0 0.6em rgba(25, 23, 23, 0.381) !important; 
-    border: solid 2.5px var(--white); */
-    color: var(--navbar-main-colour);
+a:not(a.active) {
+    text-decoration: none !important;
+    color: var(--_nav-item-colour) !important;
 }
 
-header section a#mobileNavOpen:hover {
-    #mobileNavOpen:before {
-        position: absolute;
-        top: 2px;
-        color: var(--white);
+#mobileNavToggleContainer {
+    width: var(--_side-column-width);
+    visibility: hidden;
+}
+
+@media screen and (max-width: 750px) {
+    #mobileNavToggleContainer {
+        visibility: visible;
     }
-}
 
-nav section .dropdown .dropdownItems {
-    margin-top: 0.5em;
-}
-
-nav section .dropdown a {
-    position: relative;
-}
-
-nav section .dropdown a i {
-    transition: transform 250ms;
-}
-
-nav section .dropdown a:hover {
-    cursor: pointer;
-}
-
-nav section .dropdown:has(:hover) .dropdownItems {
-    display: flex;
-    flex-direction: column;
-}
-
-nav section a:not(#mobileNavClose) {
-    font-size: 1.2rem !important;
-}
-
-@media screen and (max-width: 79rem) {
     nav {
-        display: flex;
+        border-bottom: solid 2px var(--white);
+    }
+
+    .navItems,
+    #mobileNavItems {
+        transition: height ease 150ms;
         height: 0;
-        flex-direction: column;
-        flex-wrap: wrap;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        transition: height ease 0.55s;
-        padding: 0;
-        z-index: 2;
-        position: relative;
+        width: 0;
+        background-color: var(--_navbar-background);
+        font-size: 0;
     }
 
-    nav section {
-        overflow-x: hidden;
-        overflow-y: hidden;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+    #mobileNavItems {
+        width: 100vw;
     }
 
-    nav section img {
-        display: none;
-    }
-
-    nav section div.dropdown {
-        position: relative;
-    }
-
-    nav section div.dropdown div.dropdownItems {
-        position: relative;
-        width: 100%;
-        margin: 0.6em 0;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    nav section a#mobileNavClose {
-        display: block;
-        font-size: 2em;
-        padding: 0.2em 0.35em;
-    }
-
-    nav section a#mobileNavClose:hover {
-        cursor: pointer;
-    }
-
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        align-content: center;
-        flex-wrap: wrap;
-        flex-direction: row;
-        background-color: var(--navbar-background);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    .openNav {
+        height: 100vh !important;
         width: 100vw !important;
-        margin: auto;
     }
 
-    header section {
-        margin: 0.5em;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        flex-direction: row;
+    #mobileNavItems.openNav>a {
+        font-size: 1.7rem;
     }
 
-    header section a#mobileNavOpen {
+    #mobileNavToggleContainer #mobileNavToggle {
         background: none;
         box-shadow: none;
         border-radius: 5px;
         margin-inline: auto 1rem;
         border: none;
-    }
-
-    header section a:hover {
-        cursor: pointer;
-
-    }
-
-    header section a i {
-        margin: 5px;
-        font-size: 3rem;
-        color: white;
-    }
-
-/*     header {
-        border-bottom: 2px solid var(--lighter-blue);
-    } */
-
-    nav.openNav {
-        height: 100vh;
-        padding: 0.2rem;
-    }
-
-  
-
-    nav section a:not(#mobileNavClose) {
-        font-size: 1.4rem !important;
+        font-size: 3em;
     }
 }

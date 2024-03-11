@@ -6,52 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Portfolio</title>
 
-    <script defer src="../js/mobileNav.js"></script>
+    <script defer src="js/mobileNav.js"></script>
 
-    <link rel="stylesheet" href="../css/icons.css">
-    <link rel="stylesheet" href="../css/globals.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/layout.css">
 </head>
 
 <body>
     <!--
-        Mobile Header
-        For opening the mobile navigation
-    -->
-    <header>
-        <section>
-       <!--      <a href="index.html">
-                <img src="./assets/img/Logo/Logo_just_bike.png"
-                    style="border-radius: 300px; height: 102px; width: 99px;" alt="A white bike">
-            </a> -->
-            <a id="mobileNavOpen"><i class="fas fa-bars"></i></a>
-        </section>
-
-    </header>
-    <!--
         Navigation Bar
     -->
-    <nav>
-        <section>
-            <a href="/" class="active">Home</a>
-<!--             <div class="dropdown">
-                <a>Projects <i class="fas fa-caret-down"></i></a>
-                <div class="dropdownItems">
-                    <a href="">Python</a>
-                    <a href="">NodeJS</a>
-                    <a href="">Websites</a>
-                </div>
-            </div> -->
-            <a href="/projects">Projects</a>
-            <a id="mobileNavClose"><i class="fa-solid fa-xmark"></i></a>
-        </section>
+    <nav class="flex row flex1 h-centre">
+        <div id="nameAndLogo" class="flex row h-centre">
+            <h id="devLogo" class="fa-solid fa-code"></h>
+            <h3 id="name">Charles Bird</h3>
+        </div>
+        <div class="navItems flex row v-h-centre overflow-hidden">
+            <a href="/">Home</a> <!-- Includes biography, skills, CV-->
+            <!--             <div class="dropdown">
+                    <a>Projects <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdownItems">
+                        <a href="">Python</a>
+                        <a href="">NodeJS</a>
+                        <a href="">Websites</a>
+                    </div>
+                </div> -->
+            <a href="/projects" class="active">Projects</a>
+            <a href="/contacts">Contacts</a>
+        </div>
+        <div id="mobileNavToggleContainer" class="flex row">
+            <a id="mobileNavToggle"><i class="fas fa-bars"></i></a>
+        </div>
     </nav>
     <!--
         Main Content
     -->
-    <p style="height: 100vw;"><i>Content goes here</i></p>
-
+    <div class="flex v-h-centre column">
+        <h1>This is a header</h1>
+        <h2>This is a subtitle</h2>
+        <p>This is a paragraph</p>
+    </div>
+    <!-- <footer class="">
+        <div id="links" class="flex row v-centre">
+            <a href="">Home</a>
+            <a href="">Projects</a>
+            <a href="">Contact Me</a>
+        </div>
+    </footer> -->
 </body>
 
 </html>

@@ -16,41 +16,29 @@
 
 <body>
     <!--
-        Mobile Header
-        For opening the mobile navigation
-    -->
-    <header>
-        <section>
-       <!--      <a href="index.html">
-                <img src="./assets/img/Logo/Logo_just_bike.png"
-                    style="border-radius: 300px; height: 102px; width: 99px;" alt="A white bike">
-            </a> -->
-            <a id="mobileNavOpen"><i class="fas fa-bars"></i></a>
-        </section>
-
-    </header>
-    <!--
         Navigation Bar
     -->
-    <nav>
- <!--        <section class="flex row">
-            <i class="fa-solid fa-xmark"></i>
-            <h1>Charles Bird</h1>
-        </section> -->
-        <section>
-            <a href="/" class="active">Home</a>
-<!--             <div class="dropdown">
-                <a>Projects <i class="fas fa-caret-down"></i></a>
-                <div class="dropdownItems">
-                    <a href="">Python</a>
-                    <a href="">NodeJS</a>
-                    <a href="">Websites</a>
-                </div>
-            </div> -->
+    <nav class="flex row flex1 h-centre">
+        <div id="nameAndLogo" class="flex row h-centre">
+            <h id="devLogo" class="fa-solid fa-code"></h>
+            <h3 id="name">Charles Bird</h3>
+        </div>
+        <div class="navItems flex row v-h-centre overflow-hidden">
+            <a href="/" class="active">Home</a> <!-- Includes biography, skills, CV-->
+            <!--             <div class="dropdown">
+                    <a>Projects <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdownItems">
+                        <a href="">Python</a>
+                        <a href="">NodeJS</a>
+                        <a href="">Websites</a>
+                    </div>
+                </div> -->
             <a href="./projects">Projects</a>
-            <a href="./projects">Contact Me</a>
-            <a id="mobileNavClose"><i class="fa-solid fa-xmark"></i></a>
-        </section>
+            <a href="./projects">Contacts</a>
+        </div>
+        <div id="mobileNavToggleContainer" class="flex row">
+            <a id="mobileNavToggle"><i class="fas fa-bars"></i></a>
+        </div>
     </nav>
     <!--
         Main Content
