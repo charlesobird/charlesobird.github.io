@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Portfolio</title>
+    <title>Contacts - Portfolio</title>
 
     <script defer src="../js/mobileNav.js"></script>
 
     <link rel="stylesheet" href="../css/icons.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/projects.css">
+    <link rel="stylesheet" href="../css/contacts.css">
 </head>
 
 <body>
@@ -38,8 +38,8 @@
                         <a href="">Websites</a>
                     </div>
                 </div> -->
-            <a href="/projects" class="active">Projects</a>
-            <a href="/contacts">Contacts</a>
+            <a href="/projects">Projects</a>
+            <a href="/contacts" class="active">Contacts</a>
         </div>
         <div id="mobileNavToggleContainer" class="flex row">
             <a id="mobileNavToggle"><i class="fas fa-bars"></i></a>
@@ -48,18 +48,17 @@
     <!--
         Main Content
     -->
-    <h1 id="noProjectsYet">At present, I am still in the process of developing projects for this page so below are some basic outlines for projects I have planned.</h1>
-    <div id="projects">
-        <div class="project lighter-blue-box-shadow">
-            <h2>Server Manager</h2>
-            <p>The Server Manager will be built using NextJS with Typescript, Luxia (Authentication), Prisma with
-                PostgreSQL (Database), ExpressJS (backend api for database and authentication)</p>
-        </div>
-        <div class="project lighter-blue-box-shadow">
-            <h2>The Casino</h2>
-            <p>Orginally, the casino was a project I started making with Python and MongoDB. Since then, I have decided
-                to recreate it with React and Prisma with PostgreSQL. The Casino would have 2 games (to begin with): Higher or Lower and Blackjack.</p>
-        </div>
+    <div id="container">
+        <h1>Feel free to use the form below to send me an email</h1>
+        <form action="mailto:charlesobird@outlook.com">
+            <label for="">Your Name</label>
+            <input type="text" name="" id="">
+            <label for="">Email Subject</label>
+            <input type="text" name="" id="">
+            <label for="">Your Message</label>
+            <input type="text" name="" id="">
+            <button type="submit" onclick="sendEmail()">Send Message</button>
+        </form>
     </div>
 </body>
 

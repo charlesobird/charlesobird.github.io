@@ -19,13 +19,18 @@ nav>div {
     flex-basis: auto;
 }
 
+nav > * {
+    flex-grow: 1;
+    flex-basis: auto;
+}
+
 #nameAndLogo {
     width: calc(100vw / 8);
     gap: 0.3em;
     margin-left: 0.3rem;
 }
 
-#nameAndLogo>#devLogo.fa-code {
+#nameAndLogo #devLogo.fa-code {
     font-size: 1.5rem;
     border-radius: 100%;
     border: 2px groove white;
@@ -40,15 +45,21 @@ nav>div {
 }
 
 
+nav a,
 .navItems a,
 #mobileNavToggle {
     text-decoration: none !important;
-    color: var(--_nav-item-colour);
-    font-family: 'Nexa Heavy';
-    transition: all 350ms;
+    color: var(--_nav-item-colour) !important;
+    font-family: 'Nexa Heavy' !important;
+    transition: all 350ms !important;
 }
 
-a.active,
+nav a:hover {
+    transform: scale(1.05);
+}
+
+nav a.active,
+.navItems a.active,
 .navItems a:hover,
 #mobileNavToggle:hover {
     color: var(--_nav-item-colour) !important;
@@ -56,7 +67,7 @@ a.active,
     transform: scale(1.05);
 }
 
-a:not(a.active) {
+.navItems a:not(a.active) {
     text-decoration: none !important;
     color: var(--_nav-item-colour) !important;
 }
@@ -77,11 +88,10 @@ a:not(a.active) {
 
     .navItems,
     #mobileNavItems {
-        transition: height ease 150ms;
+        transition: height ease 150ms !important;
         height: 0;
         width: 0;
         background-color: var(--_navbar-background);
-        font-size: 0;
     }
 
     #mobileNavItems {

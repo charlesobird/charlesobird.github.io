@@ -1,0 +1,10 @@
+
+.skill {
+    width: fit-content;
+}
+
+.skill>i {
+    font-size: 2.5em;
+    /*b order: 2px solid rgba(0, 0, 0, 0.274); */
+}
+
