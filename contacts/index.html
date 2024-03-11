@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/contacts.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
 </head>
 
 <body>
@@ -51,7 +56,7 @@
     <div id="container">
         <h1>Feel free to use the form below to send me an email</h1>
         <h2>Form not working? Contact <a href="mailto:charlesobird@outlook.com">my email</a> directly instead</h2>
-        <form action="../sendEmail.php" method="post">
+        <form id="emailForm" action="../sendEmail.php" method="post">
             <label for="name">Your Name</label>
             <input type="text" name="name" id="name">
             <label for="email">Your Email</label>
