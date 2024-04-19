@@ -1,12 +1,13 @@
 :root {
-    --_navbar-background: var(--lighter-blue);
+    --_navbar-background: linear-gradient(to right bottom, var(--background-gradient-1), var(--background-gradient-2));
+    ;
     --_navbar-main-colour: var(--dark-grey);
     --_side-column-width: calc(100vw / 6);
-    --_nav-item-colour: var(--black);
+    --_nav-item-colour: var(--white);
 }
 
 nav {
-    background-color: var(--_navbar-background);
+    /* background-color: var(--_navbar-background); */
     height: 4rem;
     padding: 0.2rem;
     color: var(--_navbar-item-colour);
@@ -19,7 +20,7 @@ nav>div {
     flex-basis: auto;
 }
 
-nav > * {
+nav>* {
     flex-grow: 1;
     flex-basis: auto;
 }
@@ -54,22 +55,32 @@ nav a,
     transition: all 350ms !important;
 }
 
-nav a:hover {
-    transform: scale(1.05);
+nav>a:hover {
+    transform: translateX(1rem);
 }
 
-nav a.active,
-.navItems a.active,
-.navItems a:hover,
-#mobileNavToggle:hover {
-    color: var(--_nav-item-colour) !important;
-    border-bottom: 3px solid var(--white);
-    transform: scale(1.05);
+
+.navItems a {
+    position: relative;
 }
 
-.navItems a:not(a.active) {
-    text-decoration: none !important;
-    color: var(--_nav-item-colour) !important;
+.navItems a::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 15px;
+}
+
+.navItems a:hover::after,
+.navItems a.active::after {
+    width: 100%;
+    left: 0;
 }
 
 #mobileNavToggleContainer {
@@ -82,13 +93,13 @@ nav a.active,
         visibility: visible;
     }
 
-    nav {
-        border-bottom: solid 2px var(--white);
+    .navItems:not(#mobileNavItems) {
+        display: none;
     }
 
     .navItems,
     #mobileNavItems {
-        transition: height ease 150ms !important;
+        transition: all ease 250ms;
         height: 0;
         width: 0;
         background-color: var(--_navbar-background);
@@ -99,7 +110,6 @@ nav a.active,
     }
 
     .openNav {
-        height: 100vh !important;
         width: 100vw !important;
     }
 
